@@ -1,13 +1,20 @@
-import { createBottomTabNavigator } from "@react-navigation/bottom-tabs";
-import Home from "../screens/Home.js"
+// import { createBottomTabNavigator } from "@react-navigation/bottom-tabs";
+// import Home from "../screens/Home"
+// import Create from "../screens/Create";
+// import Insights from "../screens/Insights";
+// import { createNativeStackNavigator } from "@react-navigation/native-stack";
+// import Profile from "../screens/Profile";
+
+import { createBottomTabNavigator } from "@react-navigation/bottom-tabs"
+import Home from "../screens/Home";
 import Create from "../screens/Create";
 import Insights from "../screens/Insights";
 import { createNativeStackNavigator } from "@react-navigation/native-stack";
+import Profile from "../screens/Profile";
 
 const Tab = createBottomTabNavigator();
 
 const Stack = createNativeStackNavigator();
-
 function BottomTabs () {
     return (
         <Tab.Navigator>
@@ -17,8 +24,12 @@ function BottomTabs () {
         </Tab.Navigator>
     )
 }
+
 export default function AppNavigator() {
-    <Stack.Navigator>
-        <Stack.Screen name="BottomTabs" component={BottomTabs}/>
-    </Stack.Navigator>
+    return (
+        <Stack.Navigator>
+            <Stack.Screen name="BottomTabs" component={BottomTabs}/>
+            <Stack.Screen name="Profile" component={Profile}/>
+        </Stack.Navigator>
+    )
 }
